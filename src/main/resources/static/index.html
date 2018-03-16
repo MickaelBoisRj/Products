@@ -1,0 +1,28 @@
+    <!doctype html>
+    <html>
+      <head>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+      </head>
+      <body ng-app="app">
+        <div ng-controller="ProductController as ctrl">
+
+			<ul ng-repeat="p in ctrl.products">
+				<li>{{p.name}}  
+					<button ng-click="ctrl.addItem(p)">Add</button>
+				</li>
+			</ul>
+
+	My Basket:
+			<ul ng-repeat="item in ctrl.items">
+				<li>{{item.id}} : {{item.qty}}  
+				</li>
+			</ul>
+	
+
+		<button ng-click="ctrl.send()"></button>
+		{{ctrl.message}}
+        </div>
+      </body>
+    </html>
+
